@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#mycanvas{
+				display: block;
+				/*border: 1px solid black;*/
+				margin:0 auto;
+				animation:rotation 2.5s linear infinite;	
+			}
+			@keyframes rotation 
+			{
+				   0% {transform:rotate(0deg);}
+				   100% {transform:rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas" width="800" height="600"></canvas>
+		<script type="text/javascript">
+			var canvans=document.getElementById("mycanvas");
+			var context=canvans.getContext("2d");
+			//外圆
+			context.beginPath();
+			context.strokeStyle="#000000";
+			context.arc(400,300,300,0,Math.PI*2,true);
+			context.closePath();
+			context.stroke();
+			
+			//半圆
+			context.beginPath();
+			context.strokeStyle="#000000";
+			context.fillStyle="black";
+			context.arc(400,300,300,Math.PI/2,Math.PI*3/2,true);
+			context.stroke();
+			context.fill();
+		
+			
+			
+			context.beginPath();
+			context.fillStyle="white";
+			context.arc(400,150,150,Math.PI/2,Math.PI*3/2,true);
+			context.fill();
+			
+			
+			context.beginPath();
+			context.fillStyle="black";
+			context.arc(400,450,150,Math.PI/2,Math.PI*3/2,false);
+			context.fill();
+	        
+	        
+	        
+	        //小圆
+			context.beginPath();
+			context.fillStyle="black";
+			context.arc(400,150,50,0,Math.PI*2,false);
+			context.closePath();
+			context.fill();
+			
+			//小圆
+			context.beginPath();
+			context.fillStyle="white";
+			context.arc(400,450,50,0,Math.PI*2,false);
+			context.closePath();
+			context.fill();
+		</script>
+	</body>
+</html>
